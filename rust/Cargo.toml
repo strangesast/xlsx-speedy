@@ -1,0 +1,12 @@
+[package]
+name = "xlsx-speedy"
+version = "0.1.0"
+authors = ["Sam Zagrobelny <strangesast@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+calamine = "0.18.0"
+
+[[bin]]
+name = "xlsx-speedy"
+path = "src/main.rs"
