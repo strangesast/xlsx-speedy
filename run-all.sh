@@ -1,3 +1,4 @@
 for d in */ ; do
-  bash ./run.sh ${d%/}
+  name=${d%/}
+  bash ./run.sh $name
 done

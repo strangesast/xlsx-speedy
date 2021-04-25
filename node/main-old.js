@@ -48,9 +48,9 @@ function timeit(fn, cb) {
 if (require.main === module) {
   timeit(test, (err, res) => {
     if (err != null) {
-      console.error(err);
+      throw err;
     } else {
-      console.log(res);
+      process.stdout.write(res);
     }
   });
 }

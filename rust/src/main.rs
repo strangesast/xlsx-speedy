@@ -33,7 +33,7 @@ fn timeit(f: &dyn Fn()) -> f64 {
     let start = Instant::now();
     f();
     let duration = start.elapsed();
-    return duration.as_millis() as f64 / 1000f64;
+    return duration.as_nanos() as f64 / 1e9f64;
 }
 
 fn main() {

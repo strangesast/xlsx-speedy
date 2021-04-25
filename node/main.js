@@ -35,5 +35,5 @@ async function timeit(fn) {
 }
 
 if (require.main === module) {
-  timeit(test).then(t => console.log(t));
+  timeit(test).then(t => process.stdout.write(Buffer.from(t.toString() + '\n')));
 }

@@ -1,6 +1,9 @@
 import os
+import warnings
 from pathlib import Path
 from openpyxl import load_workbook
+
+warnings.simplefilter("ignore")
 
 
 def fn(filepath, sheet_name):
