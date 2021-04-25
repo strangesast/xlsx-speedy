@@ -43,11 +43,11 @@ func test() {
 
 type afunc func()
 
-func timeit(f afunc) time.Duration {
+func timeit(f afunc) float64 {
 	start := time.Now()
 	f()
 	duration := time.Since(start)
-	return duration
+	return float64(duration/time.Nanosecond) / 1e9
 }
 
 func main() {
