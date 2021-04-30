@@ -38,14 +38,16 @@ fn func(filepath: &Path, sheet_name: &str) {
         let mut rows = r.rows().enumerate().skip(2);
 
         // check for a valid header
-        assert!(rows
-            .next()
-            .unwrap()
-            .1
-            .iter()
-            .map(|c| c.to_string())
-            .zip(HEADER.iter().map(|p| p.0))
-            .all(|(a, b)| a == b));
+        assert!(
+            rows.next()
+                .unwrap()
+                .1
+                .iter()
+                .map(|c| c.to_string())
+                .zip(HEADER.iter().map(|p| p.0))
+                .all(|(a, b)| a == b),
+            "invalid header!"
+        );
 
         let header_keys = HEADER.iter().map(|p| p.1);
 
